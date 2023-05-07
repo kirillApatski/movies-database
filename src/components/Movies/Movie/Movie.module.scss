@@ -1,0 +1,37 @@
+.movieWrapper {
+  .image {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    background-color: #3d3d3d;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s;
+    &:hover {
+      transition: 1s;
+      transform: scale(1.05);
+      box-shadow: 10px 10px 10px #000;
+    }
+    .movieRating {
+      position: absolute;
+      color: gold;
+      top: 25px;
+      right: 25px;
+      border: 2px solid gold;
+      padding: 10px;
+      border-radius: 50%;
+    }
+    .titleMovie {
+      color: gold;
+      font-size: 25px;
+    }
+    .yearMovie {
+      font-size: 20px;
+    }
+    img {
+      z-index: 10;
+      border-radius: 20px;
+      border: 1px solid #fff;
+    }
+  }
+}

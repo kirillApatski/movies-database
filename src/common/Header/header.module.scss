@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #3d3d3d;
+  border: 1px solid #000;
+  border-radius: 15px;
+  .logo {
+    max-width: 100px;
+  }
+  .siteTitle {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+}
