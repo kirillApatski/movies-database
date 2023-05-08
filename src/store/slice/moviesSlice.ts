@@ -1,24 +1,29 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {moviesApi, MoviesType} from "Api/muviesApi";
 
-interface MoviesState {
+type MoviesState = {
   docs: Array<MoviesType>;
-  loading: boolean;
-  error: string | null;
 }
 
 const initialState: MoviesState = {
   docs: [],
-  loading: false,
-  error: null,
 };
 
-export const getMovies = createAsyncThunk('movies/get', async () => {
+export const getMovies = createAsyncThunk('movies/movies', async () => {
   try {
     const res = await moviesApi.getMovie()
     setState(res.data)
     return res.data
   }catch (e) {
+  }
+})
+export const getSeries = createAsyncThunk('movies/series', async () => {
+  try {
+    const res = await moviesApi.getSeries()
+    setSeries(res.data)
+    return res.data
+  } catch (e) {
+
   }
 })
 
@@ -28,6 +33,9 @@ export const moviesSlice = createSlice({
   reducers: {
     setState(state, actions) {
       state = actions.payload
+    },
+    setSeries(state, actions) {
+      state = actions.payload
     }
   },
   extraReducers: (builder) => {
@@ -35,8 +43,11 @@ export const moviesSlice = createSlice({
       .addCase(getMovies.fulfilled, (state, action) => {
         if (action.payload) state.docs = action.payload.docs;
       })
+      .addCase(getSeries.fulfilled, (state, action) => {
+        if (action.payload) state.docs = action.payload.docs;
+      } )
   },
 })
 
 export const moviesReducer = moviesSlice.reducer
-export const {setState} = moviesSlice.actions
+export const {setState, setSeries} = moviesSlice.actions

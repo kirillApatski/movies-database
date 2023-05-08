@@ -12,3 +12,5 @@ const store = configureStore({
 export type AppStateType = ReturnType<typeof store.getState>
 
 export default store
+// @ts-ignore
+window.store = store
