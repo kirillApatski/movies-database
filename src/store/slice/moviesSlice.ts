@@ -3,10 +3,18 @@ import {moviesApi, MoviesType} from "Api/muviesApi";
 
 type MoviesState = {
   docs: Array<MoviesType>;
+  limit: number
+  page: number
+  pages: number
+  total: number
 }
 
 const initialState: MoviesState = {
   docs: [],
+  limit: 0,
+  page: 1,
+  pages: 1,
+  total: 0
 };
 
 export const getMovies = createAsyncThunk('movies/movies', async () => {
@@ -41,10 +49,16 @@ export const moviesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getMovies.fulfilled, (state, action) => {
-        if (action.payload) state.docs = action.payload.docs;
+        if (action.payload) {
+          state = action.payload
+          return state
+        }
       })
       .addCase(getSeries.fulfilled, (state, action) => {
-        if (action.payload) state.docs = action.payload.docs;
+        if (action.payload) {
+          state = action.payload
+          return state
+        }
       } )
   },
 })
