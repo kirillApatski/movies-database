@@ -9,11 +9,13 @@
   }
   .image {
     position: relative;
-    background-color: #3d3d3d;
     cursor: pointer;
     transition: 1s;
     overflow: hidden;
-
+    @media (max-width: 768px) {
+      background-color: #3d3d3d;
+      padding: 30px 30px 0 30px;
+    }
     &:hover {
       transition: .5s;
       opacity: 0.2;
@@ -36,14 +38,19 @@
       border-radius: 50%;
     }
   }
-  .titleMovie {
-    color: gold;
-    font-size: 20px;
+  .descr {
+    background-color: #3d3d3d;
+    padding: 0 0 10px 30px;
+    .titleMovie {
+      color: gold;
+      font-size: 20px;
+    }
+    .yearMovie {
+      color: white;
+      font-size: 16px;
+    }
   }
-  .yearMovie {
-    color: white;
-    font-size: 16px;
-  }
+
 }
 
 

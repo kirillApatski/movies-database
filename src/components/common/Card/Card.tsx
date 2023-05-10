@@ -15,8 +15,10 @@ const Card: FC<CardPropsType> = ({year, name, posterUrl, rating}) => {
         <img src={posterUrl} alt={name}/>
         <span className={s.movieRating}>{rating}</span>
       </div>
-      <p className={s.titleMovie}>{name}</p>
-      <p className={s.yearMovie}>{year}</p>
+      <div className={s.descr}>
+        <p className={s.titleMovie}>{name}</p>
+        <p className={s.yearMovie}>{year}</p>
+      </div>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import {instance} from "Api/instance";
 
 export const moviesApi = {
   getMovie() {
-    return  instance.get<ResponseType>('movie?limit=30')
+    return  instance.get<ResponseType>('movie?limit=30&type=movie')
   },
   getSeries() {
     return instance.get<ResponseType>(`movie?limit=30&type=tv-series`)
