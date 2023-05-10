@@ -5,7 +5,6 @@ import {MoviesType} from "Api/muviesApi";
 import Card from "components/common/Card/Card";
 import {getMovies} from "store/slice/moviesSlice";
 import {Link} from "react-router-dom";
-import s from './movies.module.scss'
 
 
 const Movies = () => {
@@ -16,7 +15,7 @@ const Movies = () => {
   }, [])
 
   return (
-    <div className={s.wrapper}>
+    <>
       {
         state.map(movie => {
           return (
@@ -31,7 +30,7 @@ const Movies = () => {
           )
         })
       }
-    </div>
+    </>
   );
 };
 

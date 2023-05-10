@@ -9,9 +9,11 @@ import {Link} from "react-router-dom";
 const TvSeries = () => {
 
   const dispatch: Dispatch<any> = useDispatch()
+
   const state = useSelector<AppStateType, MoviesType[]>(state => state.moviesData.docs)
+
   useEffect(() => {
-    dispatch(getSeries)
+    dispatch(getSeries())
   }, [])
 
   return (

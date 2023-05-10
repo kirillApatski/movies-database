@@ -1,0 +1,43 @@
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .image {
+    max-width: 500px;
+    background-color: #3d3d3d;
+    padding: 20px;
+    border-radius: 20px;
+    img {
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  .descriptions {
+    align-self: center;
+    background-color: #3d3d3d;
+    padding: 20px;
+    border-radius: 20px;
+
+    .descrItem {
+      font-size: 25px;
+      >span {
+        color: gold;
+        font-size: 30px;
+      }
+    }
+
+    .genre {
+      font-size: 25px;
+      color: crimson;
+      display: flex;
+      gap: 20px;
+      >li {
+        border-bottom: 1px solid crimson;
+      }
+      >span {
+        color: gold;
+      }
+    }
+  }
+}
