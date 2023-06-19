@@ -1,0 +1,15 @@
+.paginationWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: black;
+  > li {
+    color: red;
+    cursor: pointer;
+    padding: 5px;
+  }
+}

@@ -4,7 +4,7 @@ import Header from "components/Layout/Header/Header";
 import Footer from "components/Layout/Footer/Footer";
 import AppBody from "components/AppBody/AppBody";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Header/>

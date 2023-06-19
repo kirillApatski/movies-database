@@ -1,39 +1,55 @@
-import {instance} from "Api/instance";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-export const moviesApi = {
-  getMovie() {
-    return  instance.get<ResponseType>('movie?limit=30&type=movie')
-  },
-  getSeries() {
-    return instance.get<ResponseType>(`movie?limit=30&type=tv-series`)
-  }
-}
+export const moviesApi = createApi({
+  reducerPath: 'moviesApi',
+  baseQuery: fetchBaseQuery({
+    baseUrl: process.env.REACT_APP_BASE_URL,
+    headers: {
+      'X-API-KEY': 'PTMG118-RMPMYEF-JCEEDCD-R6M514V'
+    }
+  }),
+  endpoints: builder => ({
+    getMovies: builder.query<ResponseType, string>({
+      query: page => ({
+        url: 'movie',
+        params: {
+          limit: 20,
+          type: 'movie',
+          page
+        }
+      })
+    })
+  })
+})
+
+export const { useGetMoviesQuery } = moviesApi
 
 export type ResponseType = {
-  docs: Array<MoviesType>
+  docs: Array<VideosType>
+
   limit: number
   page: number
   pages: number
   total: number
 }
 
-export type MoviesType = {
+export type VideosType = {
   alternativeName: string
-  countries: [{name: string}]
+  countries: [{ name: string }]
   description: string
   enName: null
   externalId: {
-    imdb:string
+    imdb: string
     kpHD: string
     tmdb: number
   }
-  genres:[{name: string}]
+  genres: [{ name: string }]
   id: number
-  logo: {url: string}
+  logo: { url: string }
   movieLength: number
   name: string
-  names: [{name: string}]
-  poster: {url: string}
+  names: [{ name: string }]
+  poster: { url: string }
   rating: {
     await: null
     filmCritics: number
@@ -51,7 +67,7 @@ export type MoviesType = {
     russianFilmCritics: number
   }
   watchability: {
-    items: [{name: string}]
+    items: [{ name: string }]
   }
   year: number
 }

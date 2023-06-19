@@ -1,12 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import thunkMiddleware  from 'redux-thunk'
-import {moviesReducer} from "store/slice/moviesSlice";
+import { moviesApi } from 'Api/muviesApi'
 
 const store = configureStore({
   reducer: {
-    moviesData: moviesReducer,
+    [moviesApi.reducerPath]: moviesApi.reducer
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(thunkMiddleware),
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(moviesApi.middleware)
 })
 
 export type AppStateType = ReturnType<typeof store.getState>

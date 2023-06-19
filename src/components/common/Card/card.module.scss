@@ -1,6 +1,8 @@
 .movieWrapper {
   width: 200px;
   background-color: black;
+  border: 1px solid white;
+  overflow: hidden;
   @media (max-width: 1024px) {
     width: 350px;
   }
@@ -8,28 +10,37 @@
     width: 100%;
   }
   .image {
+    width: 200px;
+    min-height: 270px;
     position: relative;
     cursor: pointer;
     transition: 1s;
     overflow: hidden;
+    @media (max-width: 1024px) {
+      width: 350px;
+    }
     @media (max-width: 768px) {
       background-color: #3d3d3d;
       padding: 30px 30px 0 30px;
     }
-    &:hover {
-      transition: .5s;
-      opacity: 0.2;
-      transform: scale(1.05);
-    }
-    @media (max-width: 768px) {
+    img {
+      width: 100%;
       &:hover {
-        transition: none;
-        opacity: 1;
-        transform: none;
+        transition: .5s;
+        opacity: 0.6;
+        transform: scale(1.05);
+      }
+      @media (max-width: 768px) {
+        &:hover {
+          transition: none;
+          opacity: 1;
+          transform: none;
+        }
       }
     }
+
     .movieRating {
-      //z-index: 11;
+      z-index: 11;
       position: absolute;
       color: white;
       top: 25px;
@@ -42,6 +53,10 @@
     background-color: #3d3d3d;
     padding: 0 0 10px 30px;
     .titleMovie {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 150px;
       color: gold;
       font-size: 20px;
     }
