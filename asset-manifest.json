@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/movies-database/static/css/main.2d22bcee.css",
-    "main.js": "/movies-database/static/js/main.a3afb9c5.js",
+    "main.css": "/movies-database/static/css/main.7248675b.css",
+    "main.js": "/movies-database/static/js/main.84279f86.js",
     "static/js/787.6198889d.chunk.js": "/movies-database/static/js/787.6198889d.chunk.js",
     "static/media/Background-app.webp": "/movies-database/static/media/Background-app.f99f0ef41d700882be67.webp",
     "index.html": "/movies-database/index.html",
-    "main.2d22bcee.css.map": "/movies-database/static/css/main.2d22bcee.css.map",
-    "main.a3afb9c5.js.map": "/movies-database/static/js/main.a3afb9c5.js.map",
+    "main.7248675b.css.map": "/movies-database/static/css/main.7248675b.css.map",
+    "main.84279f86.js.map": "/movies-database/static/js/main.84279f86.js.map",
     "787.6198889d.chunk.js.map": "/movies-database/static/js/787.6198889d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d22bcee.css",
-    "static/js/main.a3afb9c5.js"
+    "static/css/main.7248675b.css",
+    "static/js/main.84279f86.js"
   ]
 }
