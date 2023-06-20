@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { useGetMoviesQuery } from 'Api/muviesApi'
 import Card from 'components/common/Card/Card'
@@ -7,11 +7,11 @@ import { CustomPagination } from 'components/common/CustomPagination/CustomPagin
 import s from './movies.module.scss'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { useSearchParams } from 'react-router-dom'
 
 const Movies = () => {
-  const [currentPage, setCurrentPage] = useState('1')
-  const { data, isLoading, isFetching } = useGetMoviesQuery(currentPage)
-  console.log(isFetching)
+  let [searchParams, setSearchParams] = useSearchParams()
+  const { data, isLoading, isFetching } = useGetMoviesQuery(searchParams.get('page'))
   return (
     <>
       <div className={s.wrapper}>
@@ -21,7 +21,7 @@ const Movies = () => {
             ))
           : data?.docs.map(movie => {
               return isFetching ? (
-                <Skeleton className={s.skeletonItem} />
+                <Skeleton key={movie.id} className={s.skeletonItem} />
               ) : (
                 <Link key={movie.id} to={`/movies/${movie.id}`}>
                   <Card
@@ -34,7 +34,7 @@ const Movies = () => {
               )
             })}
       </div>
-      <CustomPagination pageCount={data?.pages} onClickPage={setCurrentPage} />
+      <CustomPagination pageCount={data?.pages} onClickPage={setSearchParams} />
     </>
   )
 }

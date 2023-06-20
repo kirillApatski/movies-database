@@ -9,7 +9,8 @@ type PropsType = {
 
 export const CustomPagination: FC<PropsType> = ({ pageCount, onClickPage }) => {
   function handlePageClick(selectedItem: { selected: number }) {
-    onClickPage(String(selectedItem.selected + 1))
+    const currentPage = `page=${selectedItem.selected + 1}`
+    onClickPage(currentPage)
   }
 
   return (
@@ -17,7 +18,7 @@ export const CustomPagination: FC<PropsType> = ({ pageCount, onClickPage }) => {
       breakLabel='...'
       nextLabel='>'
       onPageChange={handlePageClick}
-      pageRangeDisplayed={3}
+      pageRangeDisplayed={6}
       pageCount={pageCount!}
       previousLabel='<'
       renderOnZeroPageCount={null}

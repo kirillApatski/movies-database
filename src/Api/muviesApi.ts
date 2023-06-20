@@ -9,7 +9,7 @@ export const moviesApi = createApi({
     }
   }),
   endpoints: builder => ({
-    getMovies: builder.query<ResponseType, string>({
+    getMovies: builder.query<ResponseType, string | null>({
       query: page => ({
         url: 'movie',
         params: {
