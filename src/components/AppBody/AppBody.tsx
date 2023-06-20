@@ -9,7 +9,7 @@ const AppBody = () => {
   return (
     <section className={s.appBody}>
       <Routes>
-        <Route element={<Movies />} />
+        <Route path='/' element={<Movies />} />
         <Route path='movies' element={<Movies />} />
         <Route path='movies/:idCard' element={<CardDetails />} />
         <Route path='series' element={<TvSeries />} />

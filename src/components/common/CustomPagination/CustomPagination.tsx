@@ -18,7 +18,7 @@ export const CustomPagination: FC<PropsType> = ({ pageCount, onClickPage }) => {
       nextLabel='>'
       onPageChange={handlePageClick}
       pageRangeDisplayed={3}
-      pageCount={Math.ceil(pageCount)}
+      pageCount={pageCount!}
       previousLabel='<'
       renderOnZeroPageCount={null}
       className={s.paginationWrapper}

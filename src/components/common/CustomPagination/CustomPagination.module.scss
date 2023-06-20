@@ -4,12 +4,21 @@
   align-items: center;
   gap: 5px;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   padding: 20px;
-  background-color: black;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.8);
   > li {
-    color: red;
+    color: white;
     cursor: pointer;
     padding: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: .3s;
+    &:hover {
+      background: white;
+      color: black;
+    }
   }
 }
