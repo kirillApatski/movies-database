@@ -1,20 +1,19 @@
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
+  gap: 20px;
   background-color: #3d3d3d;
   border: 1px solid #000;
   border-radius: 15px;
   .logo {
-    max-width: 100px;
+    display: flex;
+    align-items: center;
   }
   .siteTitle {
     font-size: 30px;
     font-weight: bold;
-    margin-left: 20px;
   }
   .navLinks {
     display: flex;

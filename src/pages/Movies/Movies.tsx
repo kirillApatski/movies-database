@@ -16,7 +16,7 @@ const Movies = () => {
     <>
       <div className={s.wrapper}>
         {isLoading
-          ? [...new Array(20)].map((_, index) => (
+          ? [...new Array(14)].map((_, index) => (
               <Skeleton key={index + Date()} className={s.skeletonItem} />
             ))
           : data?.docs.map(movie => {
@@ -34,7 +34,11 @@ const Movies = () => {
               )
             })}
       </div>
-      <CustomPagination pageCount={data?.pages} onClickPage={setSearchParams} />
+      <CustomPagination
+        pageCount={data?.pages}
+        currentPage={data?.page}
+        onClickPage={setSearchParams}
+      />
     </>
   )
 }

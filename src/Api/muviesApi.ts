@@ -5,7 +5,7 @@ export const moviesApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.REACT_APP_BASE_URL,
     headers: {
-      'X-API-KEY': 'PTMG118-RMPMYEF-JCEEDCD-R6M514V'
+      'X-API-KEY': process.env.REACT_APP_TOKEN!
     }
   }),
   endpoints: builder => ({
@@ -13,7 +13,7 @@ export const moviesApi = createApi({
       query: page => ({
         url: 'movie',
         params: {
-          limit: 20,
+          limit: 14,
           type: 'movie',
           page
         }
