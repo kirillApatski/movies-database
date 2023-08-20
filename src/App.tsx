@@ -4,7 +4,7 @@ import Header from 'components/Layout/Header/Header'
 import Footer from 'components/Layout/Footer/Footer'
 import AppBody from 'components/AppBody/AppBody'
 
-const App = () => {
+export const App = () => {
   return (
     <div className='App'>
       <Header />
@@ -13,5 +13,3 @@ const App = () => {
     </div>
   )
 }
-
-export default App
